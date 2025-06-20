@@ -1,5 +1,7 @@
 package br.com.mdsantos.gestao_cursos.modules.users.useCases;
 
+import br.com.mdsantos.gestao_cursos.exceptions.ValidationException;
+import br.com.mdsantos.gestao_cursos.modules.users.entities.Email;
 import br.com.mdsantos.gestao_cursos.modules.users.entities.UserEntity;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +10,7 @@ public class CreateUserUseCase {
 
     public void execute(UserEntity user) {
         if (user.getName() == null || user.getEmail() == null ||  user.getPassword() == null || user.getRoleUser() == null) {
-            throw new RuntimeException("Fill required fields");
+            throw new ValidationException("Fill required fields");
         }
     }
 }

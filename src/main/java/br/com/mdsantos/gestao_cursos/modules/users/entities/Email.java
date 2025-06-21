@@ -1,13 +1,17 @@
 package br.com.mdsantos.gestao_cursos.modules.users.entities;
 
 import br.com.mdsantos.gestao_cursos.exceptions.ValidationException;
+import jakarta.persistence.Embeddable;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.regex.Pattern;
 
 @Getter
+@NoArgsConstructor
+@Embeddable
 public class Email {
-    private final String email;
+    private String email;
 
     public Email(String email) throws ValidationException {
         this.validate(email);

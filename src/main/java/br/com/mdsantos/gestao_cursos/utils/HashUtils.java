@@ -4,7 +4,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
-//I Don't know if create a util classe is the best way
+//I Don't know if create a util class is the best way
 @Component
 public class HashUtils {
     private static PasswordEncoder passwordEncoder;

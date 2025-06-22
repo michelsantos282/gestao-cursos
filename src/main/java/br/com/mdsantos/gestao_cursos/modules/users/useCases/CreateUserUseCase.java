@@ -20,8 +20,8 @@ public class CreateUserUseCase {
         this.userRepository = userRepository;
     }
 
-    public UUID execute(CreateUserRequestDto user) {
-        if (user.name() == null || user.email() == null ||  user.password() == null) {
+    public UUID execute(CreateUserRequestDto user) throws ValidationException {
+        if (user.name() == null || user.email() == null ||  user.password() == null || user.roleUser() == null) {
             throw new ValidationException("Fill required fields");
         }
         //Idk if it's the right way to do that

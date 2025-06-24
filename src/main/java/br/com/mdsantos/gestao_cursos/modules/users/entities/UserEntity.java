@@ -37,4 +37,12 @@ public class UserEntity {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    public String getPasswordHash() {
+        return this.password.getPassword();
+    }
+
+    public String getEmail() {
+        return this.email.getEmail();
+    }
+
 }
